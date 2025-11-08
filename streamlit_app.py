@@ -24,7 +24,6 @@ if 'graph' not in st.session_state:
     with st.spinner("Loading road network graph..."):
         st.session_state.graph = ox.graph_from_xml("map.osm", simplify=True)
         st.session_state.nodes_gdf, st.session_state.edges_gdf = ox.graph_to_gdfs(st.session_state.graph)
-        st.success(f"Graph loaded: {len(st.session_state.graph.nodes())} nodes, {len(st.session_state.graph.edges())} edges")
 
 if 'start_coords' not in st.session_state:
     st.session_state.start_coords = None
